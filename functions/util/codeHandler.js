@@ -34,7 +34,8 @@ getCode = (req, res) => {
                 to: '+1' + phoneNum //assuming provided phoneNumber is in the U.S
             })
             res.status(200).json({
-                isGenerated: true
+                isGenerated: true,
+                message: ""
             })
 
         }).catch((err) => {
