@@ -40,13 +40,15 @@ validator = (req, res) => {
                     })
                     res.status(200).json({
                         success: true,
-                        message: 'Access Granted!!'
+                        message: 'Access Granted!!',
+                        isGenerated: false,
                     });
 
                 } else {
                     res.status(401).json({
                         success: false,
-                        message: 'Invalid Code!!'
+                        message: 'Invalid Code!!',
+                        isGenerated: true
                     })
                 }
             }

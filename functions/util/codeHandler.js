@@ -17,7 +17,6 @@ getCode = (req, res) => {
     if (!phoneValidator(phoneNum)) {
         res.status(400).json({
             isGenerated: false,
-            isSent: false,
             message: "Phone Number must not be empty and must have 10 digits number"
         })
     } else {
@@ -35,14 +34,12 @@ getCode = (req, res) => {
                 to: '+1' + phoneNum //assuming provided phoneNumber is in the U.S
             })
             res.status(200).json({
-                isGenerated: true,
-                isSent: true
+                isGenerated: true
             })
 
         }).catch((err) => {
             res.status(500).json({
                 isGenerated: false,
-                issent: false,
                 message: "Something went wrong. Please try again"
             })
         });
